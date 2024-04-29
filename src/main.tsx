@@ -5,14 +5,26 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import HomeLayout from './layout/Home.layout'
 import Matricula from './pages/Matricula.page'
+import  { InputWithLabel } from './layout/Login.layout'
+import RecoverPassword from './pages/RecoverPassword.page'
+
 
 const router = createBrowserRouter([
   {
     path: '/',
+    element: <InputWithLabel/>,
+  }
+  ,
+  {
+    path: '/recover-password',
+    element: <RecoverPassword/>
+  },
+  {
+    path: '/crayon',
     element: <HomeLayout/>,
     children: [
       {
-        path: '/matricula',
+        path: '/crayon/matricula',
         element: <Matricula/>
       }
     ]
